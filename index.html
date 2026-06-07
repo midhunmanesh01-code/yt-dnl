@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamVault - YouTube Downloader</title>
+    <meta
+      name="description"
+      content="Premium Free YouTube video downloader with a clean UI. Paste a public YouTube video URL and download in MP4 format. No login, no ads, just fast and easy video downloads."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="StreamVault home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img" aria-label="StreamVault logo" focusable="false">
+              <defs>
+                <linearGradient id="streamvault-gradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ff736b" />
+                  <stop offset="0.55" stop-color="#ff3b30" />
+                  <stop offset="1" stop-color="#b91c1c" />
+                </linearGradient>
+              </defs>
+              <rect x="8.5" y="8.5" width="47" height="47" rx="15" fill="url(#streamvault-gradient)" />
+              <path
+                d="M24.8 21.8c0-1.6 1.8-2.6 3.2-1.8l13.8 8.1c1.4.8 1.4 2.8 0 3.6L28 39.8c-1.4.8-3.2-.2-3.2-1.8V21.8Z"
+                fill="rgba(255,255,255,0.95)"
+              />
+              <path
+                d="M19.8 45.2c4 2.4 7.7 3.6 12.2 3.6s8.2-1.2 12.2-3.6"
+                fill="none"
+                stroke="rgba(255,255,255,0.34)"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span>
+            <strong>StreamVault</strong>
+            <span>YouTube video downloader</span>
+          </span>
+        </a>
+        <nav class="top-links" aria-label="Page sections">
+          <a href="#tool">Tool</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#formats">Formats</a>
+        </nav>
+      </header>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#tool">Tools</a>
+        <span>›</span>
+        <span>YouTube Video Downloader</span>
+      </nav>
+
+      <section class="hero" id="top" aria-labelledby="title">
+        <div class="hero-copy">
+          <div class="badge">Tools</div>
+          <h1 id="title">YouTube Video Downloader</h1>
+          <p class="subtitle">
+            Download public YouTube videos instantly. Paste a URL, choose the quality and download as MP4. No login, no ads, just fast and easy video downloads.
+          </p>
+        </div>
+
+        <section class="tool-card" id="tool" aria-labelledby="panel-title">
+          <div class="card-head">
+            <p class="section-label">Post URL *</p>
+            <h2 id="panel-title">Paste YouTube link</h2>
+          </div>
+
+          <form class="download-form" action="#" method="post" onsubmit="return false;">
+            <div class="field-row">
+              <input
+                id="url-input"
+                type="url"
+                placeholder="https://www.youtube.com/watch?v=VIDEO_ID"
+                aria-describedby="helper-text"
+              />
+              <p id="helper-text" class="helper-text">Paste a public YouTube video URL</p>
+            </div>
+            <div class="button-row">
+              <button class="button-secondary" type="reset">Reset</button>
+              <button type="submit">Download YT Video</button>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <section class="promo-card" aria-labelledby="promo-title">
+        <p class="promo-label">Free tool</p>
+        <h2 id="promo-title">Clean UI for downloading public YouTube videos</h2>
+        <p>
+          This website stays focused on the conversion flow only. There is no login wall, no pricing
+          block, and no dashboard filler.
+        </p>
+      </section>
+
+      <section class="how-grid" id="how-it-works" aria-labelledby="how-title">
+        <div class="section-head">
+          <p class="section-label">How to download YouTube videos</p>
+          <h2 id="how-title">Simple three-step workflow</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article>
+            <span>1</span>
+            <h3>Copy video URL</h3>
+            <p>Copy the YouTube video link from browser or share menu.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Paste link</h3>
+            <p>Paste the URL into the field and prepare the request.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Save file</h3>
+            <p>Choose the quality and download as MP4.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="formats-card" id="formats" aria-labelledby="formats-title">
+        <div class="section-head">
+          <p class="section-label">Supported formats and quality</p>
+          <h2 id="formats-title">Recommended export options</h2>
+        </div>
+        <p class="formats-subtitle">
+          YouTube videos often provide multiple quality tiers depending on the upload source and
+          stream availability.
+        </p>
+
+        <div class="table-wrap" role="table" aria-label="Supported formats and quality">
+          <div class="table-row table-head" role="row">
+            <span role="columnheader">Quality</span>
+            <span role="columnheader">Resolution</span>
+            <span role="columnheader">File Size</span>
+            <span role="columnheader">Best For</span>
+          </div>
+          <div class="table-row" role="row">
+            <span role="cell" data-label="Quality">360p</span>
+            <span role="cell" data-label="Resolution">640x360</span>
+            <span role="cell" data-label="File Size">~8-20 MB/video</span>
+            <span role="cell" data-label="Best For">Fast previews and lightweight downloads</span>
+          </div>
+          <div class="table-row" role="row">
+            <span role="cell" data-label="Quality">480p</span>
+            <span role="cell" data-label="Resolution">854x480</span>
+            <span role="cell" data-label="File Size">~15-35 MB/video</span>
+            <span role="cell" data-label="Best For">Standard desktop and mobile playback</span>
+          </div>
+          <div class="table-row" role="row">
+            <span role="cell" data-label="Quality">720p HD</span>
+            <span role="cell" data-label="Resolution">1280x720</span>
+            <span role="cell" data-label="File Size">~30-70 MB/video</span>
+            <span role="cell" data-label="Best For">Editing and repost workflows</span>
+          </div>
+          <div class="table-row" role="row">
+            <span role="cell" data-label="Quality">Audio Only</span>
+            <span role="cell" data-label="Resolution">M4A / WEBM</span>
+            <span role="cell" data-label="File Size">~1-12 MB/video</span>
+            <span role="cell" data-label="Best For">Podcast clips, notes, and voice extraction</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
