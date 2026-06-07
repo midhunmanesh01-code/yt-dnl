@@ -549,3 +549,20 @@ button[type="reset"] {
     padding: 14px 14px 16px;
   }
 }
+.about-footer {
+    text-align: center;
+    padding: auto 20px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(245, 245, 245, 0.3);
+}
+
+.about-footer p {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.heart {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+}
