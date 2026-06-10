@@ -146,12 +146,6 @@
             <span role="columnheader">Best For</span>
           </div>
           <div class="table-row" role="row">
-            <span role="cell" data-label="Quality">360p</span>
-            <span role="cell" data-label="Resolution">640x360</span>
-            <span role="cell" data-label="File Size">~8-20 MB/video</span>
-            <span role="cell" data-label="Best For">Fast previews and lightweight downloads</span>
-          </div>
-          <div class="table-row" role="row">
             <span role="cell" data-label="Quality">480p</span>
             <span role="cell" data-label="Resolution">854x480</span>
             <span role="cell" data-label="File Size">~15-35 MB/video</span>
@@ -162,6 +156,12 @@
             <span role="cell" data-label="Resolution">1280x720</span>
             <span role="cell" data-label="File Size">~30-70 MB/video</span>
             <span role="cell" data-label="Best For">Editing and repost workflows</span>
+          </div>
+          <div class="table-row" role="row">
+            <span role="cell" data-label="Quality">1080p</span>
+            <span role="cell" data-label="Resolution">1920x1080</span>
+            <span role="cell" data-label="File Size">~50-120 MB/video</span>
+            <span role="cell" data-label="Best For">High-quality downloads for archival and sharing</span>
           </div>
           <div class="table-row" role="row">
             <span role="cell" data-label="Quality">Audio Only</span>
@@ -175,5 +175,67 @@
     <footer class="about-footer">
             <p>Created with <span class="heart">♥</span> by Midhun Manesh</p>
     </footer>
+
+    <!-- Quality Selection Modal -->
+    <div id="quality-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Select Download Quality</h3>
+          <button class="modal-close" aria-label="Close dialog" onclick="closeQualityModal()">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="quality-options">
+            <button class="quality-btn" onclick="downloadVideo('480p')">480p</button>
+            <button class="quality-btn" onclick="downloadVideo('720p')">720p</button>
+            <button class="quality-btn" onclick="downloadVideo('1080p')">1080p</button>
+            <button class="quality-btn" onclick="downloadVideo('audio')">Audio Only</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const downloadForm = document.querySelector('.download-form');
+      const urlInput = document.getElementById('url-input');
+      const qualityModal = document.getElementById('quality-modal');
+
+      downloadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const url = urlInput.value.trim();
+        
+        // Basic YouTube URL validation
+        if (url && isValidYouTubeUrl(url)) {
+          openQualityModal();
+        } else {
+          alert('Please enter a valid YouTube URL');
+        }
+      });
+
+      function isValidYouTubeUrl(url) {
+        const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/;
+        return youtubeRegex.test(url);
+      }
+
+      function openQualityModal() {
+        qualityModal.style.display = 'flex';
+      }
+
+      function closeQualityModal() {
+        qualityModal.style.display = 'none';
+      }
+
+      function downloadVideo(quality) {
+        const url = urlInput.value.trim();
+        alert(`Downloading in ${quality}...\n\nNote: This is a demo. Actual download functionality would go here.\n\nVideo URL: ${url}\nQuality: ${quality}`);
+        closeQualityModal();
+      }
+
+      // Close modal when clicking outside of it
+      qualityModal.addEventListener('click', function(e) {
+        if (e.target === qualityModal) {
+          closeQualityModal();
+        }
+      });
+    </script>
   </body>
 </html>
