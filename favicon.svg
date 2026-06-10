@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="StreamVault logo">
+  <defs>
+    <linearGradient id="streamvault-favicon-gradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff736b" />
+      <stop offset="0.55" stop-color="#ff3b30" />
+      <stop offset="1" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+  <rect x="8.5" y="8.5" width="47" height="47" rx="15" fill="url(#streamvault-favicon-gradient)" />
+  <path d="M24.8 21.8c0-1.6 1.8-2.6 3.2-1.8l13.8 8.1c1.4.8 1.4 2.8 0 3.6L28 39.8c-1.4.8-3.2-.2-3.2-1.8V21.8Z" fill="rgba(255,255,255,0.95)" />
+  <path d="M19.8 45.2c4 2.4 7.7 3.6 12.2 3.6s8.2-1.2 12.2-3.6" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="2.2" stroke-linecap="round" />
+</svg>
