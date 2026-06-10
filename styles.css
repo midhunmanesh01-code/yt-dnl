@@ -550,7 +550,6 @@ button[type="reset"] {
   }
 }
 
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -633,10 +632,10 @@ button[type="reset"] {
 .quality-btn {
   min-width: auto;
   padding: 16px 12px;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid rgba(21, 33, 47, 0.75);
   border-radius: 14px;
-  background: rgba(255, 59, 48, 0.1);
-  color: var(--accent);
+  background: rgba(4, 75, 189, 0.12);
+  color: #c7def9;
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
@@ -645,9 +644,9 @@ button[type="reset"] {
 }
 
 .quality-btn:hover {
-  background: rgba(255, 59, 48, 0.2);
+  background: rgba(9, 165, 233, 0.18);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 59, 48, 0.2);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.22);
 }
 
 .quality-btn:active {
