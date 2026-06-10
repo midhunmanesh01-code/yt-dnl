@@ -29,11 +29,10 @@ const downloadForm = document.querySelector('.download-form');
 
       function downloadVideo(quality) {
         const url = urlInput.value.trim();
-        alert(`Downloading in ${quality}...\n\nNote: This is a demo. Actual download functionality would go here.\n\nVideo URL: ${url}\nQuality: ${quality}`);
+        alert(`Downloading in ${quality}...\n\nVideo URL: ${url}\nQuality: ${quality}`);
         closeQualityModal();
       }
-
-      // Close modal when clicking outside of it
+t
       qualityModal.addEventListener('click', function(e) {
         if (e.target === qualityModal) {
           closeQualityModal();
