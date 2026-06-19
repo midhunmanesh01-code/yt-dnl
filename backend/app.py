@@ -26,19 +26,41 @@ def download():
     if quality == 'audio':
 
         ydl_opts = {
-            'format': 'bestaudio',
-            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s'
+    'format': 'bestaudio',
+    'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
+
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['android']
         }
+    },
+
+    'geo_bypass': True,
+    'noplaylist': True,
+    'quiet': False,
+    'nocheckcertificate': True
+}
 
     else:
 
         height = quality.replace('p', '')
 
         ydl_opts = {
-            'format': f'bestvideo[height<={height}]+bestaudio/best',
-            'merge_output_format': 'mp4',
-            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s'
+    'format': f'bestvideo[height<={height}]+bestaudio/best',
+    'merge_output_format': 'mp4',
+    'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
+
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['android']
         }
+    },
+
+    'geo_bypass': True,
+    'noplaylist': True,
+    'quiet': False,
+    'nocheckcertificate': True
+}
 
     try:
 
