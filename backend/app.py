@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, render_template
 import yt_dlp
 import os
 
+os.environ["PATH"] += os.pathsep + r"C:\Users\USER\Downloads\ffmpeg-8.1.1-essentials_build\ffmpeg-8.1.1-essentials_build\bin"
+
 app = Flask(__name__)
 
 DOWNLOAD_FOLDER = "downloads"
@@ -25,7 +27,8 @@ def download():
 
         ydl_opts = {
             'format': 'bestaudio',
-            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s'
+            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
+            'ffmpeg_location': r'C:\Users\USER\Downloads\ffmpeg-8.1.1-essentials_build\ffmpeg-8.1.1-essentials_build\bin'
         }
 
     else:
@@ -35,7 +38,8 @@ def download():
         ydl_opts = {
             'format': f'bestvideo[height<={height}]+bestaudio/best',
             'merge_output_format': 'mp4',
-            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s'
+            'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
+            'ffmpeg_location': r'C:\Users\USER\Downloads\ffmpeg-8.1.1-essentials_build\ffmpeg-8.1.1-essentials_build\bin'
         }
 
 
