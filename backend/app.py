@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, jsonify, render_template, send_file, after_this_request
 import yt_dlp
 import os
 
@@ -78,7 +78,15 @@ def download():
 
             elif os.path.exists(webm):
                 filename = webm
-
+        
+        @after_this_request
+        def cleanup(response):
+            try:
+                os.remove(filename)
+            except Exception:
+                pass
+            return response
+        
         return send_file(
             filename,
             as_attachment=True
@@ -86,11 +94,35 @@ def download():
 
     except Exception as e:
 
-        return jsonify({
-            'success': False,
-            'message': str(e)
-        })
+        return f"""
+        <h2>Download Failed-Retry</h2>
 
+        <p>{str(e)}</p>
+
+        <br>
+
+        <a href="/">
+        <button>
+        Go Back
+        </button>
+        </a>
+
+        """,400
+
+@app.route('/storage')
+def storage():
+
+    total = 0
+
+    for root, dirs, files in os.walk("downloads"):
+
+        for file in files:
+
+            path = os.path.join(root, file)
+
+            total += os.path.getsize(path)
+
+    return f"{total/1024/1024:.2f} MB"
 
 if __name__ == "__main__":
 
