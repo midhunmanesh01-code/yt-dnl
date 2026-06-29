@@ -75,10 +75,19 @@ StreamVault/
 
 ## 🚀 Installation
 
-### 1️⃣ Clone the repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/midhunmanesh01-code/yt-dnl.git
+git clone <repository-url>
+cd yt-dnl
+```
+
+Replace `<repository-url>` with your fork or the repository URL.
+
+Example:
+
+```bash
+git clone https://github.com/username/yt-dnl.git
 cd yt-dnl
 ```
 
