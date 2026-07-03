@@ -26,7 +26,7 @@ def download():
         ydl_opts = {
             'format': 'bestaudio',
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
-
+            'impersonate': 'chrome',
             'extractor_args': {
                 'youtube': {
                     'player_client': ['android']
@@ -35,8 +35,10 @@ def download():
 
             'geo_bypass': True,
             'noplaylist': True,
-            'quiet': False,
-            'nocheckcertificate': True
+            'quiet': True,
+            'no_warnings': True,
+            'retries': 5,
+            'extractor_retries': 5
         }
 
     else:
@@ -47,7 +49,7 @@ def download():
             'format': f'bestvideo[height<={height}]+bestaudio/best',
             'merge_output_format': 'mp4',
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
-
+            'impersonate': 'chrome',
             'extractor_args': {
                 'youtube': {
                     'player_client': ['android']
@@ -56,8 +58,10 @@ def download():
 
             'geo_bypass': True,
             'noplaylist': True,
-            'quiet': False,
-            'nocheckcertificate': True
+            'quiet': True,
+            'no_warnings': True,
+            'retries': 5,
+            'extractor_retries': 5
         }
 
     try:
@@ -96,16 +100,9 @@ def download():
 
         return f"""
         <h2>Download Failed-Retry</h2>
-
         <p>{str(e)}</p>
-
         <br>
-
-        <a href="/">
-        <button>
-        Go Back
-        </button>
-        </a>
+        <a href="/"><button>Go Back</button></a>
 
         """,400
 
