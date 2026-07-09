@@ -115,14 +115,13 @@ def download():
         )
 
     except Exception as e:
+     import traceback
+     print(traceback.format_exc())
 
-        return f"""
-        <h2>Download Failed-Retry</h2>
-        <p>{str(e)}</p>
-        <br>
-        <a href="/"><button>Go Back</button></a>
-
-        """,400
+    return f"""
+    <h2>Download Failed</h2>
+    <pre>{traceback.format_exc()}</pre>
+    """, 400
 
 @app.route('/storage')
 def storage():
