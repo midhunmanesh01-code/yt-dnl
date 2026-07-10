@@ -26,7 +26,6 @@ def download():
         ydl_opts = {
             'format': 'bestaudio',
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
-            'impersonate': 'chrome',
             'http_headers': {
                 'User-Agent': (
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
@@ -58,7 +57,6 @@ def download():
             'format': f'bestvideo[height<={height}]+bestaudio/best',
             'merge_output_format': 'mp4',
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
-            'impersonate': 'chrome',
             'http_headers': {
                 'User-Agent': (
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
