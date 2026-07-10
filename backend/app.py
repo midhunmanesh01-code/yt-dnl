@@ -117,10 +117,119 @@ def download():
 
         print(traceback.format_exc())   # Shows full error in Render logs
 
-        return f"""
-        <h2>Download Failed</h2>
-        <pre>{traceback.format_exc()}</pre>
-        """, 400
+        return """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Download Failed | StreamVault</title>
+
+            <style>
+                *{
+                    margin:0;
+                    padding:0;
+                    box-sizing:border-box;
+                    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+                }
+
+                body{
+                    background:#0f172a;
+                    color:white;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    height:100vh;
+                    padding:20px;
+                }
+
+                .card{
+                    background:#1e293b;
+                    max-width:650px;
+                    width:100%;
+                    border-radius:18px;
+                    padding:40px;
+                    text-align:center;
+                    box-shadow:0 20px 45px rgba(0,0,0,.45);
+                }
+
+                .icon{
+                    font-size:70px;
+                    margin-bottom:20px;
+                }
+
+                h1{
+                    margin-bottom:15px;
+                    color:#ff6b6b;
+                }
+
+                p{
+                    color:#d1d5db;
+                    line-height:1.7;
+                    margin-bottom:18px;
+                }
+
+                .info{
+                    background:#0f172a;
+                    border-left:5px solid #3b82f6;
+                    padding:16px;
+                    border-radius:10px;
+                    margin:25px 0;
+                    text-align:left;
+                }
+
+                code{
+                    color:#60a5fa;
+                    word-break:break-all;
+                }
+
+                .btn{
+                    display:inline-block;
+                    margin-top:20px;
+                    padding:14px 30px;
+                    background:#2563eb;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:10px;
+                    transition:.25s;
+                    font-weight:600;
+                }
+
+                .btn:hover{
+                    background:#1d4ed8;
+                }
+
+            </style>
+        </head>
+        <body>
+        <div class="card">
+        <div class="icon">⚠️</div>
+        <h1>Download Failed</h1>
+        <p>
+        This video couldn't be downloaded because YouTube requested additional verification.
+        </p>
+        <div class="info">
+        <b>Why did this happen?</b>
+        <br><br>
+        Some YouTube videos require additional verification before they can be downloaded from cloud-hosted applications.
+        </div>
+        <p>
+        You can:
+        <br><br>
+        ✅ Try another public video.
+        <br>
+        ✅ Try the official demo video.
+        </p>
+        <p>
+        Demo Video:
+        <br><br>
+        <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>
+        </p>
+        <a class="btn" href="/">⬅ Back to StreamVault</a>
+        </div>
+        </body>
+        </html>
+        """,400
 
 @app.route('/storage')
 def storage():
